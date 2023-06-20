@@ -3,7 +3,7 @@ using Crayons
 using SciMLBase
 
 testlist = [
-    ("operationpoint/PowerModelsIntegration.jl","PowerModels Operationpoint Finder Tests"),
+    ("operationpoint/PowerModelsIntegration.jl", "PowerModels Operationpoint Finder Tests"),
     ("common/States.jl", "States Tests"),
     ("common/PowerGrid.jl", "PowerGrid Tests"),
     ("common/PowerGridSolutions.jl", "PowerGridSolutions Tests"),
@@ -23,15 +23,15 @@ testlist = [
     ("nodes/ExponentialRecoveryLoad.jl", "ExponentialRecoveryLoad Node Tests"),
     ("nodes/FourthOrderEqGovernorExciterAVR.jl", "FourthOrderEqGovernorExciterAVR Node Tests"),
     ("nodes/experimental/RLCLoad.jl", "RLCLoad Node Tests"),
-    ("nodes/experimental/PVInverterWithFrequencyControl.jl","PVInverter Tests"),
-    ("nodes/experimental/WindTurbineGenType4.jl","WindGenType 4 Tests"),
-    ("nodes/experimental/WindTurbineGenType4_RotorControl.jl","WindGenType 4 with Rotor Control Tests"),
-    ("nodes/experimental/CurtailedPowerPlantWithInertia.jl","CurtailedPowerPlantWithInertia Tests"),
-    ("nodes/experimental/FluctuationNode.jl","FluctuationNode Tests"),
-    ("nodes/experimental/NormalForm.jl","NormalForm Tests"),
-    ("IONodes/IONode.jl","General IONode Tests"),
-    ("IONodes/GFI_MTK.jl","BlockSystems based GFI Tests"),
-    ("IONodes/BusNode.jl","BusNode Tests"),
+    ("nodes/experimental/PVInverterWithFrequencyControl.jl", "PVInverter Tests"),
+    ("nodes/experimental/WindTurbineGenType4.jl", "WindGenType 4 Tests"),
+    ("nodes/experimental/WindTurbineGenType4_RotorControl.jl", "WindGenType 4 with Rotor Control Tests"),
+    ("nodes/experimental/CurtailedPowerPlantWithInertia.jl", "CurtailedPowerPlantWithInertia Tests"),
+    ("nodes/experimental/FluctuationNode.jl", "FluctuationNode Tests"),
+    ("nodes/experimental/NormalForm.jl", "NormalForm Tests"),
+    ("IONodes/IONode.jl", "General IONode Tests"),
+    ("IONodes/GFI_MTK.jl", "BlockSystems based GFI Tests"),
+    ("IONodes/BusNode.jl", "BusNode Tests"),
     ("lines/StaticLine.jl", "StaticLine tests"),
     ("lines/PiModelLine.jl", "PiModelLine tests"),
     ("lines/RLLine.jl", "RLLine tests"),
@@ -39,6 +39,7 @@ testlist = [
     ("faults/AbstractPerturbation.jl", "AbstractPerturbation Tests"),
     ("faults/ChangeInitialConditions.jl", "ChangeInitialConditions Tests"),
     ("faults/NodeParameterChange.jl", "NodeParameterChange Tests"),
+    ("faults/NodeParameterChanges.jl", "NodeParameterChanges Tests"),
     ("faults/LineFailure.jl", "LineFailure Tests"),
     ("faults/PowerPerturbation.jl", "PowerPerturbation Simulation Tests"),
     ("faults/NodeShortCircuit.jl", "NodeShortCircuit Simulation Tests"),
@@ -49,6 +50,6 @@ testlist = [
 @testset "All Tests" begin
     @testset "$desc" for (file, desc) in testlist
         t = @elapsed include(file)
-        println(Crayon(foreground = :green, bold = true), "$desc:", Crayon(reset = true), " $t s")
+        println(Crayon(foreground=:green, bold=true), "$desc:", Crayon(reset=true), " $t s")
     end
 end

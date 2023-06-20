@@ -67,13 +67,14 @@ include("faults/ChangeInitialConditions.jl")
 include("faults/AbstractPerturbation.jl")
 include("faults/LineFailure.jl")
 include("faults/NodeParameterChange.jl")
+include("faults/NodeParameterChanges.jl")
 include("faults/PowerPerturbation.jl")
 include("faults/NodeShortCircuit.jl")
 
 export AbstractNode
 
 # export of the main types and functions
-export PowerDynamicsError,NodeDynamicsError,StateError,GridSolutionError,OperationPointError
+export PowerDynamicsError, NodeDynamicsError, StateError, GridSolutionError, OperationPointError
 export no_internal_masses
 export @DynamicNode, showdefinition
 export construct_vertex
