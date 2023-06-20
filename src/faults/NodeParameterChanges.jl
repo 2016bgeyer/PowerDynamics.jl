@@ -9,15 +9,15 @@ NodeParameterChanges(;nodes, values, tspan_faults, vars)
 - `vars`:  symbol of parameters that are perturbed
 """
 Base.@kwdef struct NodeParameterChanges <:AbstractPerturbation
-    nodes
-    values
-    tspan_faults::Tuple
-    vars::Symbol
+    nodes::Array{Tuple{String,Symbol,Float64}}
+    values::Array{Float64}
+    tspan_faults::Array{Tuple}
+    vars::Array{Symbol}
 end
 
 function (gp::NodeParameterChanges)(powergrid)
-    for gp_i in gp
-        typestable_node_field_update(powergrid, gp_i.nodes, gp_i.vars, gp_i.values)
+    for (node, var, value) in gp
+        typestable_node_field_update(powergrid, node, var, value)
 end
 
 """
